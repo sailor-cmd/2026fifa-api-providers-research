@@ -359,12 +359,12 @@ GET https://push.api.bbci.co.uk/batch?t=%2Fdata%2Fbbc-morph-sport-live-scores...
       </div>
 
       <div class="recommendation-box">
-        <h3>💡 我们的 2026 世界杯落地决断 (Final Decision)</h3>
-        <p>考虑到您的团队正在建设的是一个“拥有自我冲突解决能力（Conflict Detection）的生产系统”，我们给出的最终组合打法是：</p>
+        <h3>💡 2026 世界杯落地建议 (Recommended Setup)</h3>
+        <p>综合成本、可用性、数据覆盖与实施复杂度，推荐采用“1 个付费主源 + 2 个免费验证源 + 统一裁决引擎”的组合方案：</p>
         <ol>
-          <li><strong>主力买单（付费兜底）：</strong> 购买 $19/月的 <strong>API-Football</strong> 作为主 Source A。它廉价、无需谈判、即刻可用，提供官方的基础稳定保障。</li>
-          <li><strong>自主白嫖（免费高速验证）：</strong> 将 <strong>ESPN Hidden API</strong> 和 <strong>FotMob API</strong> 封装为 Source B 和 Source C。</li>
-          <li><strong>引擎裁决：</strong> 让我们的 Node.js Worker 每隔 15 秒并发请求这三个 JSON 接口。由于接口全是纯 JSON 而非 HTML 页面解析，CPU 消耗极低，容错极高。这完美契合了我们已经写好的多源交叉验证状态机！</li>
+          <li><strong>主力买单（付费兜底）：</strong> 购买 $19/月的 <strong>API-Football</strong> 作为主 Source A。它成本低、接入快，可提供稳定的基础数据保障。</li>
+          <li><strong>自主抓取（免费高速验证）：</strong> 将 <strong>ESPN Hidden API</strong> 和 <strong>FotMob API</strong> 封装为 Source B 和 Source C，用于免费补充与交叉验证。</li>
+          <li><strong>引擎裁决：</strong> 由 Node.js Worker 每隔 15 秒并发请求这三个 JSON 接口，通过统一规则完成去重、冲突检测与结果裁决。由于全部采用 JSON 数据流而非 HTML 解析，CPU 开销低，容错性更高。</li>
         </ol>
       </div>
     </section>
